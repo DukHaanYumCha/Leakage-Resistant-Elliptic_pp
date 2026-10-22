@@ -42,11 +42,11 @@ Elliptic++ releases 55 features for 265,354 labelled Bitcoin addresses, with a p
 
 ## Requirements
 
-Python [3.11], with the packages in `environment.yml` (DuckDB, PyArrow, pandas, NumPy, scikit-learn, Matplotlib).
+Python 3.11, with the packages in `environment.yml` (DuckDB, PyArrow, pandas, NumPy, scikit-learn, Matplotlib).
 
 ```bash
 conda env create -f environment.yml
-conda activate [env name]
+conda activate Leakage-Resistant-Elliptic_pp
 ```
 
 Notebooks `00` to `02` process about 1.2 billion transaction inputs and 1.3 billion outputs. They were run on a node of the Dutch national supercomputer Snellius with 192 threads and 336 GB of memory. The DuckDB settings (threads, memory limit, temporary directory) are set in the first cell of each notebook and can be lowered, at the cost of longer run times and more disk spill.
