@@ -3,7 +3,7 @@ We revisit how the 55 Elliptic++ address-level features are computed and propose
 
 # Leakage-resistant Elliptic++ address features
 
-Code and data for the paper * Revisiting Elliptic++: *.
+Code and data for the paper "Revisiting Elliptic++: ".
 
 Elliptic++ releases 55 features for 265,354 labelled Bitcoin addresses, with a positional train/test split and features that summarise each address over the whole collection window. This repository recomputes the 55 features from public ledger data with exact definitions, applies a temporal split at block 457,734 (the last block of Elliptic time step 34), and restricts the feature computation process of each training address to its transactions up to that block. It contains the notebooks that build the dataset from the raw sources and reproduce every table and figure in the paper, and the resulting leakage-resistant features.
 
