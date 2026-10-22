@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# raw and processed data are downloaded or generated locally
+data/raw/*
+data/processed/*
+!data/*/README.md
+
+# macOS
+.DS_Store
