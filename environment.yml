@@ -2,12 +2,14 @@ name: Leakage-Resistant-Elliptic_pp
 channels:
   - conda-forge
 dependencies:
-  - python=3.11
-  - duckdb
-  - pyarrow
-  - pandas
-  - numpy
-  - scikit-learn
-  - matplotlib
-  - jupyterlab
-  - ipykernel
+  - python=3.13
+  - pip
+  - pip:
+      - duckdb==2.0.0
+      - pyarrow==26.0.0
+      - pandas==3.1.0
+      - numpy==2.5.4
+      - scikit-learn==1.9.1
+      - matplotlib==3.11.2
+      - jupyterlab
+      - ipykernel
