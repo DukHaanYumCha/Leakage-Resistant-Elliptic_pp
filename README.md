@@ -47,7 +47,7 @@ conda env create -f environment.yml
 conda activate Leakage-Resistant-Elliptic_pp
 ```
 
-Notebooks `00` to `02` process about 1.2 billion transaction inputs and 1.3 billion outputs. They were run on a node of the Dutch national supercomputer Snellius with 192 threads and 336 GB of memory. The DuckDB settings (threads, memory limit, temporary directory) are set in the first cell of each notebook and can be lowered, at the cost of longer run times and more disk spill.
+Notebooks `00` to `02` process about 1.2 billion transaction inputs and 1.3 billion outputs. They were run on a node of the Dutch national supercomputer Snellius with 192 threads and 336 GB of memory, and take out 40 minutes to finish. The DuckDB settings (threads, memory limit, temporary directory) are set in the first cell of each notebook and can be lowered, at the cost of longer run times and more disk spill.
 
 Notebooks `03` to `05` only read the files written by `02` and the wallet file in `data/raw/elliptic_pp/`, so they run on a standard machine once the features exist.
 
