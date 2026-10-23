@@ -1,7 +1,7 @@
 # Leakage-resistant features
 
 `notebooks/05_correlations_release.ipynb` writes the released dataset to this folder as
-`elliptic_pp_leakage_resistant.parquet`. To use it without running the pipeline, download it from https://drive.google.com/file/d/1wYoqSVz96OIoSd5bqqbuT3kzYIgL-tSU/view?usp=sharing.
+`elliptic_pp_leakage_resistant.parquet`.
 
 ## Content
 
