@@ -15,9 +15,7 @@ Elliptic++ releases 55 features for 265,354 labelled Bitcoin addresses, with a p
 | `data/processed/` | intermediate tables written by the notebooks |
 | `notebooks/` | the pipeline, run in numerical order, saved with their outputs |
 | `outputs/features/` | the leakage-resistant features |
-| `outputs/tables/` | the tables of the paper in LaTeX |
 | `outputs/figures/` | the figures of the paper in PDF |
-| `outputs/paper_numbers.csv` | every number reported in the paper, with the notebook that computes it |
 
 ## Data sources
 
@@ -36,9 +34,9 @@ Elliptic++ releases 55 features for 265,354 labelled Bitcoin addresses, with a p
 | `00_convert.ipynb` | converts the Kondor files to Parquet | Kondor tables in `data/processed/` |
 | `01_link.ipynb` | joins Elliptic++ addresses to the ledger, maps Elliptic transactions to the ledger, derives the block range of each time step, the cutoff block, and the temporal split | address map, Elliptic transactions, time-step blocks |
 | `02_features.ipynb` | computes the 55 features from the per-transaction table, once over each address's full history (lifetime set) and once restricted at the cutoff (leakage-resistant set) | `outputs/features/` |
-| `03_validate.ipynb` | compares the lifetime set with the released Elliptic++ features | match rates, fee-share check, divergent addresses |
-| `04_evaluate.ipynb` | reproduces the Elliptic++ classifiers and measures the effect of the split and the features | reproduction, sensitivity, and leakage tables |
-| `05_figures_tables.ipynb` | writes the figures, tables, and `paper_numbers.csv` | `outputs/tables/`, `outputs/figures/` |
+| `03_validate.ipynb` | checks the recovered lifetime features against the released ones | match rates, fee-share check, feature redundancy/linear-dependency |
+| `04_evaluate.ipynb` | reproduces the Elliptic++ classifiers and measures the effect of the split and the features | reproduction, scaling check, sensitivity, leakage table, and illicit share in each period |
+| `05_correlations_release.ipynb` | computes correlations and generates the heatmap | feature correlations, `outputs/figures/`, leakage-resistant features `outputs/features/` |
 
 ## Requirements
 
@@ -51,7 +49,7 @@ conda activate Leakage-Resistant-Elliptic_pp
 
 Notebooks `00` to `02` process about 1.2 billion transaction inputs and 1.3 billion outputs. They were run on a node of the Dutch national supercomputer Snellius with 192 threads and 336 GB of memory. The DuckDB settings (threads, memory limit, temporary directory) are set in the first cell of each notebook and can be lowered, at the cost of longer run times and more disk spill.
 
-Notebooks `03` to `05` only read the files written by `02`, so they run on a standard machine once the features exist.
+Notebooks `03` to `05` only read the files written by `02` and the wallet file in `data/raw/elliptic_pp/`, so they run on a standard machine once the features exist.
 
 ## Reproducing the paper
 
@@ -60,6 +58,8 @@ Notebooks `03` to `05` only read the files written by `02`, so they run on a sta
 3. Run the notebooks in order, from `00_convert.ipynb` to `05_figures_tables.ipynb`.
 
 Random forest results are averaged over ten fixed seeds, and every query that loads data sorts its rows, so reruns give the same numbers.
+
+Every number reported in the paper is printed in the outputs of the notebooks, which are saved with the repository.
 
 ## The released features
 
