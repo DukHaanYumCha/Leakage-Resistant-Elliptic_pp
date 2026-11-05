@@ -77,4 +77,5 @@ The code is released under the MIT licence (`LICENSE`). The recomputed features 
 
 ## Citation
 
-[...]
+Liang, R., Trimborn, S., &amp; van Giersbergen, N. (2026). Revisiting Elliptic++ for Bitcoin Forensics: Feature Reconstruction and Leakage-Resistant Evaluation. arXiv e-prints (arXiv:2611.04000).
+
